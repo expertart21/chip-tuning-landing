@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Видеокурс по чип-тюнингу от Expert Tun Club. 5 лекций, 2 часа личных консультаций, поддержка 6 месяцев, бонусное ПО и документы для старта.">
+<meta name="keywords" content="обучение чип-тюнингу, видеокурс, прошивка ЭБУ, Expert Tun Club, ETC-Chip">
+<meta property="og:title" content="Видеокурс по чип-тюнингу | Expert Tun Club">
+<meta property="og:description" content="5 практических лекций. 2 часа личных консультаций. Поддержка 6 месяцев. Реальный вход в профессию.">
+<meta property="og:type" content="website">
+<title>Видеокурс по чип-тюнингу | Expert Tun Club — ETC-Chip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg0:#020617;--bg1:#060d14;--bg2:#0a1628;--bg3:#0f1e38;
+  --border:#1a2e50;--bg:#rgba(34,197,94,.25);
+  --g5:#22c55e;--g4:#4ade80;--g3:#86efac;--g6:#16a34a;--g7:#15803d;
+  --gdim:rgba(34,197,94,.1);--gdim2:rgba(34,197,94,.06);
+  --tx:#f8fafc;--tx2:#94a3b8;--tx3:#64748b;
+  --bord-g:rgba(34,197,94,.25);
+  --r8:8px;--r12:12px;--r16:16px;--r20:20px;--r99:100px;
+  --sh:0 4px 24px rgba(0,0,0,.5);
+  --shg:0 0 40px rgba(34,197,94,.12);
+  --tr:200ms ease;--trf:150ms ease;--trs:300ms ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg0);color:var(--tx);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15}
+h1{font-size:clamp(28px,5vw,52px);font-weight:800}
+h2{font-size:clamp(22px,3.5vw,38px);font-weight:700}
+h3{font-size:clamp(16px,2vw,20px);font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.tag{display:inline-flex;align-items:center;gap:6px;background:var(--gdim);color:var(--g4);border:1px solid var(--bord-g);border-radius:var(--r99);padding:4px 14px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.sh{text-align:center;margin-bottom:52px}
+.sh h2{margin-bottom:10px}
+.sh p{color:var(--tx2);font-size:17px;max-width:580px;margin:0 auto;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r12);font-size:16px;font-weight:600;border:none;transition:all var(--tr);cursor:pointer;font-family:'Inter',sans-serif;min-height:44px;white-space:nowrap}
+.btn-p{background:var(--g5);color:#fff}
+.btn-p:hover{background:var(--g6);transform:translateY(-2px);box-shadow:0 8px 28px rgba(34,197,94,.4)}
+.btn-g{background:transparent;color:var(--tx);border:2px solid var(--border)}
+.btn-g:hover{border-color:var(--g5);color:var(--g4);transform:translateY(-2px)}
+.btn-lg{padding:18px 36px;font-size:18px;font-weight:700}
+.btn-w{width:100%}
+@media(prefers-reduced-motion:reduce){.btn,.btn:hover{transform:none;transition:none}}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(2,6,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 0;transition:border-color var(--tr)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-b{width:36px;height:36px;background:var(--g5);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:13px;font-weight:900;font-style:italic;color:#fff;flex-shrink:0;position:relative;overflow:hidden}
+.logo-b::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(255,255,255,.04) 4px,rgba(255,255,255,.04) 8px)}
+.logo-i{display:flex;flex-direction:column;line-height:1.1}
+.logo-n{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--tx)}
+.logo-s{font-size:10px;color:var(--g4);font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+.nav-ul{display:none;gap:24px;list-style:none}
+.nav-ul a{font-size:14px;color:var(--tx2);font-weight:500;transition:color var(--trf)}
+.nav-ul a:hover{color:var(--tx)}
+.nav-cta{display:none}
+@media(min-width:768px){.nav-ul{display:flex}.nav-cta{display:inline-flex}}
+
+/* HERO */
+.hero{padding:132px 0 96px;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hg1{position:absolute;top:-200px;right:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.1) 0%,transparent 65%)}
+.hg2{position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.06) 0%,transparent 65%)}
+.hgl{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(var(--g5) 1px,transparent 1px),linear-gradient(90deg,var(--g5) 1px,transparent 1px);background-size:60px 60px}
+.hi{display:grid;gap:48px;position:relative;z-index:1}
+@media(min-width:940px){.hi{grid-template-columns:1.1fr .9fr;align-items:start}}
+.lpill{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:var(--g4);border-radius:var(--r99);padding:5px 14px;font-size:13px;font-weight:600;margin-bottom:20px}
+.ldot{width:7px;height:7px;background:var(--g5);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero h1{margin-bottom:18px}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--tx2);max-width:540px;margin-bottom:32px;line-height:1.75}
+.hbtns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.hst{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.st{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);padding:14px 10px;text-align:center}
+.stn{font-family:'Poppins',sans-serif;font-size:clamp(18px,3vw,26px);font-weight:800;color:var(--g4);line-height:1;margin-bottom:3px}
+.stl{font-size:11px;color:var(--tx3);line-height:1.3}
+.hr{display:flex;flex-direction:column;gap:14px}
+.gc{background:rgba(10,22,40,.7);border:1px solid rgba(34,197,94,.2);border-radius:var(--r16);padding:24px;backdrop-filter:blur(12px);box-shadow:var(--shg)}
+.er{display:flex;gap:16px;align-items:flex-start}
+.ea{width:60px;height:60px;border-radius:var(--r12);background:var(--g5);flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ea svg{position:relative;z-index:1}
+.ea::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 5px,rgba(0,0,0,.12) 5px,rgba(0,0,0,.12) 10px)}
+.en{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;margin-bottom:2px}
+.ero{font-size:12px;color:var(--g4);font-weight:600;margin-bottom:6px}
+.ed{font-size:13px;color:var(--tx2);line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.chip{background:var(--gdim);border:1px solid var(--bord-g);color:var(--g4);border-radius:var(--r99);padding:2px 10px;font-size:11px;font-weight:600}
+.ic{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);padding:18px}
+.it{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:12px}
+.cl{list-style:none;display:flex;flex-direction:column;gap:7px}
+.cl li{display:flex;gap:8px;font-size:13px;color:var(--tx);align-items:flex-start}
+.cl li svg{flex-shrink:0;margin-top:2px;color:var(--g5)}
+
+/* PAIN */
+.pain{background:var(--bg1)}
+.pg{display:grid;gap:12px}
+@media(min-width:640px){.pg{grid-template-columns:1fr 1fr}}
+.pc{background:var(--bg2);border:1px solid var(--border);border-left:3px solid rgba(239,68,68,.5);border-radius:var(--r12);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;transition:border-color var(--tr),transform var(--tr)}
+.pc:hover{border-left-color:#ef4444;transform:translateX(3px)}
+.pi{width:36px;height:36px;background:rgba(239,68,68,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#f87171}
+.pt{font-weight:600;font-size:15px;margin-bottom:4px}
+.pd{font-size:13px;color:var(--tx2);line-height:1.6}
+
+/* WHO */
+.wg{display:grid;gap:12px}
+@media(min-width:640px){.wg{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.wg{grid-template-columns:repeat(3,1fr)}}
+.wc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);padding:22px;display:flex;gap:14px;align-items:flex-start;transition:border-color var(--tr),transform var(--tr);cursor:default}
+.wc:hover{border-color:var(--g5);transform:translateY(-2px)}
+.wi{width:44px;height:44px;background:var(--gdim);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--g5)}
+.wt{font-weight:700;font-size:15px;margin-bottom:4px}
+.wd{font-size:13px;color:var(--tx2);line-height:1.55}
+
+/* PROGRAM */
+.prog{background:var(--bg1)}
+.pnote{background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(74,222,128,.05));border:1px solid var(--bord-g);border-radius:var(--r12);padding:16px 20px;margin-bottom:28px;display:flex;gap:12px;align-items:flex-start}
+.pnote svg{flex-shrink:0;color:var(--g4);margin-top:2px}
+.pnote strong{display:block;color:var(--g4);font-size:14px;margin-bottom:3px}
+.pnote span{font-size:13px;color:var(--tx2)}
+.ll{display:flex;flex-direction:column;gap:10px}
+.lc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);overflow:hidden;transition:border-color var(--tr)}
+.lc:hover{border-color:rgba(34,197,94,.3)}
+.lh{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:18px 20px;cursor:pointer}
+.ln{width:34px;height:34px;background:var(--gdim);border:1px solid var(--bord-g);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:12px;font-weight:800;color:var(--g4);flex-shrink:0}
+.lname{font-weight:600;font-size:15px;margin-bottom:3px}
+.lsub{font-size:12px;color:var(--tx3)}
+.lr{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.lprice{font-family:'Poppins',sans-serif;font-size:16px;font-weight:800;color:var(--g4)}
+.lcb{font-size:11px;color:var(--tx3)}
+.lbtn{display:inline-flex;align-items:center;gap:4px;background:var(--gdim);color:var(--g4);border:1px solid var(--bord-g);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;transition:background var(--trf);white-space:nowrap;cursor:pointer;font-family:inherit}
+.lbtn:hover{background:rgba(34,197,94,.22)}
+.lb{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.lc.open .lb{max-height:300px}
+.lbi{padding:0 20px 20px 68px;font-size:14px;color:var(--tx2);line-height:1.7;border-top:1px solid var(--border)}
+.lbi strong{color:var(--g4)}
+
+/* FORMAT */
+.fmg{display:grid;gap:12px}
+@media(min-width:640px){.fmg{grid-template-columns:1fr 1fr}}
+.fmc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);padding:24px;display:flex;gap:14px;align-items:flex-start;transition:border-color var(--tr),transform var(--tr)}
+.fmc:hover{border-color:var(--g5);transform:translateY(-2px)}
+.fmi{width:44px;height:44px;background:var(--gdim);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--g5)}
+.fmc h3{margin-bottom:5px}
+.fmc p{font-size:13px;color:var(--tx2);line-height:1.6}
+
+/* SUPPORT */
+.sup{background:var(--bg1)}
+.supg{display:grid;gap:40px}
+@media(min-width:940px){.supg{grid-template-columns:1fr 1fr}}
+.ch{background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.06));border:2px solid var(--g5);border-radius:var(--r20);padding:32px;margin-bottom:24px;position:relative;overflow:hidden}
+.ch::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.15) 0%,transparent 70%)}
+.cbadge{display:inline-flex;align-items:center;gap:6px;background:var(--g5);color:#fff;border-radius:var(--r99);padding:4px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
+.ctitle{font-family:'Poppins',sans-serif;font-size:clamp(20px,3vw,26px);font-weight:800;margin-bottom:10px;line-height:1.2}
+.ctitle span{color:var(--g4)}
+.cdesc{font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:20px}
+.cpts{display:grid;gap:8px}
+.cpt{display:flex;gap:10px;font-size:13px;align-items:flex-start}
+.cpt svg{flex-shrink:0;color:var(--g5);margin-top:1px}
+.si{display:flex;flex-direction:column;gap:18px}
+.sitem{display:flex;gap:14px;align-items:flex-start}
+.sico{width:42px;height:42px;background:var(--g5);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
+.sitem h3{font-size:15px;margin-bottom:3px}
+.sitem p{font-size:13px;color:var(--tx2);line-height:1.6}
+.tlc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r16);padding:28px}
+.tlt{font-size:14px;font-weight:700;color:var(--g4);margin-bottom:20px}
+.tl{display:flex;flex-direction:column}
+.tls{display:flex;gap:14px;padding-bottom:20px;position:relative}
+.tls:last-child{padding-bottom:0}
+.tls::before{content:'';position:absolute;left:18px;top:38px;width:2px;height:calc(100% - 18px);background:linear-gradient(180deg,var(--g5),transparent)}
+.tls:last-child::before{display:none}
+.tld{width:38px;height:38px;border:2px solid var(--g5);background:var(--gdim);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:12px;font-weight:800;color:var(--g4);flex-shrink:0}
+.tlt2{font-weight:600;font-size:14px;margin-bottom:2px}
+.tld2{font-size:12px;color:var(--tx2)}
+
+/* INCLUDED */
+.incg{display:grid;gap:12px}
+@media(min-width:640px){.incg{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.incg{grid-template-columns:repeat(4,1fr)}}
+.incb{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);padding:22px;position:relative;overflow:hidden}
+.incb::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g5),var(--g4))}
+.incb svg{color:var(--g5);margin-bottom:12px}
+.incb h3{font-size:15px;margin-bottom:10px}
+.incul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.incul li{display:flex;gap:8px;font-size:13px;color:var(--tx2);align-items:flex-start}
+.incul li::before{content:'✓';color:var(--g5);font-weight:800;flex-shrink:0;font-size:12px;margin-top:1px}
+
+/* BONUS */
+.bonussec{background:var(--bg1)}
+.bong{display:grid;gap:16px}
+@media(min-width:720px){.bong{grid-template-columns:1fr 1fr}}
+.bonc{background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.05));border:1px solid var(--bord-g);border-radius:var(--r20);padding:32px;text-align:center;position:relative;overflow:hidden}
+.bonc::after{content:attr(data-s);position:absolute;top:-10px;right:10px;font-size:100px;font-weight:900;color:rgba(34,197,94,.05);line-height:1;pointer-events:none;font-family:'Poppins',sans-serif}
+.bonn{font-family:'Poppins',sans-serif;font-size:clamp(48px,7vw,70px);font-weight:900;background:linear-gradient(135deg,var(--g5),var(--g4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
+.bonl{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;margin-bottom:12px}
+.bond{font-size:14px;color:var(--tx2);line-height:1.65;margin-bottom:18px}
+.bonps{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.bonp{background:rgba(0,0,0,.25);border:1px solid var(--bord-g);border-radius:var(--r99);padding:4px 14px;font-size:12px;font-weight:600}
+
+/* WHY */
+.whyg{display:grid;gap:12px}
+@media(min-width:640px){.whyg{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.whyg{grid-template-columns:repeat(3,1fr)}}
+.whyc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);padding:20px;display:flex;gap:12px;align-items:flex-start}
+.whych{width:26px;height:26px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--g4)}
+.whyc h3{font-size:14px;margin-bottom:3px}
+.whyc p{font-size:13px;color:var(--tx2);line-height:1.55}
+
+/* REVIEWS */
+.revsec{background:var(--bg0)}
+.revg{display:grid;gap:12px}
+@media(min-width:640px){.revg{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.revg{grid-template-columns:repeat(3,1fr)}}
+.revc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);padding:22px}
+.revst{color:#fbbf24;font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.revtx{font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:16px}
+.reva{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:12px}
+.revav{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:13px;font-weight:800;flex-shrink:0}
+.revn{font-weight:600;font-size:13px;margin-bottom:1px}
+.revr{font-size:11px;color:var(--tx3)}
+
+/* FAQ */
+.faqsec{background:var(--bg1)}
+.fql{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.fqi{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r12);overflow:hidden}
+.fqq{width:100%;background:none;border:none;padding:16px 20px;text-align:left;color:var(--tx);font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:'Poppins',sans-serif;transition:background var(--trf);line-height:1.4}
+.fqq:hover{background:rgba(255,255,255,.025)}
+.fqa2{font-size:20px;color:var(--g4);flex-shrink:0;transition:transform var(--trs);line-height:1}
+.fqi.open .fqa2{transform:rotate(45deg)}
+.fqa{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;padding:0 20px}
+.fqi.open .fqa{max-height:400px;padding:0 20px 18px}
+.fqa p{font-size:14px;color:var(--tx2);line-height:1.75}
+
+/* CTA */
+.ctaf{background:linear-gradient(180deg,var(--bg1),var(--bg0))}
+.ctag{display:grid;gap:20px}
+@media(min-width:720px){.ctag{grid-template-columns:1fr 1fr}}
+.ctac{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r20);padding:32px 26px;text-align:center;position:relative;transition:transform var(--tr)}
+.ctac:hover{transform:translateY(-3px)}
+.ctac.feat{border-color:var(--g5);background:linear-gradient(160deg,rgba(34,197,94,.08),var(--bg2))}
+.ctapop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--g5);color:#fff;border-radius:var(--r99);padding:4px 18px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;font-family:'Poppins',sans-serif}
+.ctac h3{font-size:20px;margin-bottom:8px}
+.ctad{font-size:14px;color:var(--tx2);margin-bottom:20px;line-height:1.6}
+.ctap{font-family:'Poppins',sans-serif;font-size:clamp(34px,5vw,48px);font-weight:900;color:var(--g4);line-height:1;margin-bottom:4px}
+.ctacb{font-size:13px;color:var(--tx3);margin-bottom:4px}
+.ctacb span{color:var(--g4);font-weight:700}
+.ctano{font-size:12px;color:var(--tx3);margin-bottom:24px}
+.ctafl{list-style:none;text-align:left;margin-bottom:26px;display:flex;flex-direction:column;gap:8px}
+.ctafl li{display:flex;gap:8px;font-size:13px;align-items:flex-start;color:var(--tx)}
+.ctafl li svg{flex-shrink:0;color:var(--g5);margin-top:1px}
+.ctafl .hi{color:var(--g4);font-weight:600}
+.urg{margin-top:36px;text-align:center;padding:18px 22px;background:rgba(34,197,94,.06);border:1px dashed var(--bord-g);border-radius:var(--r12)}
+.urg p{font-size:15px;color:var(--tx2);line-height:1.7}
+.urg strong{color:var(--g4)}
+
+/* FOOTER */
+.foot{background:#010409;border-top:1px solid var(--border);padding:36px 0}
+.footi{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.footx{font-size:13px;color:var(--tx3)}
+.footl{display:flex;gap:18px;flex-wrap:wrap}
+.footl a{font-size:13px;color:var(--tx3);transition:color var(--trf)}
+.footl a:hover{color:var(--g4)}
+
+/* STICKY */
+.stk{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(2,6,23,.96);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;transition:opacity var(--tr)}
+@media(max-width:767px){.stk{display:block}}
+.stk .btn{width:100%}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv,.rv.on{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="logo"><div class="logo-b">ETC</div><div class="logo-i"><span class="logo-n">Expert Tun Club</span><span class="logo-s">etc-chip.ru</span></div></a>
+    <ul class="nav-ul">
+      <li><a href="#program">Программа</a></li>
+      <li><a href="#support">Поддержка</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#buy" class="btn btn-p nav-cta" style="padding:9px 20px;font-size:14px">Купить курс</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hbg"><div class="hg1"></div><div class="hg2"></div><div class="hgl"></div></div>
+  <div class="wrap">
+    <div class="hi">
+      <div>
+        <div class="lpill"><div class="ldot"></div>Курс доступен — запись открыта</div>
+        <h1>Видеокурс по<br><span style="color:var(--g4)">чип-тюнингу</span>:<br>теория и практика</h1>
+        <p class="hero-sub">5 практических лекций от Expert Tun Club. Полный путь от новичка до уверенной работы с клиентами и прошивками — на реальных кейсах.</p>
+        <div class="hbtns">
+          <a href="#buy" class="btn btn-p btn-lg">Купить курс — 25 000 ₽</a>
+          <a href="#program" class="btn btn-g btn-lg">Смотреть программу</a>
+        </div>
+        <div class="hst">
+          <div class="st"><div class="stn">5</div><div class="stl">практических лекций</div></div>
+          <div class="st"><div class="stn">2 ч.</div><div class="stl">личных консультаций</div></div>
+          <div class="st"><div class="stn">6 мес.</div><div class="stl">поддержки</div></div>
+        </div>
+      </div>
+      <div class="hr">
+        <div class="gc rv">
+          <div class="er">
+            <div class="ea"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" fill="#fff"/></svg></div>
+            <div>
+              <div class="en">Руководитель Expert Tun Club</div>
+              <div class="ero">Практикующий специалист по чип-тюнингу</div>
+              <div class="ed">Обучает и отвечает лично. Работает с ЭБУ каждый день.</div>
+              <div class="chips"><span class="chip">Бензин / Дизель</span><span class="chip">EGR / DPF / AdBlue</span><span class="chip">Stage 1–2</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ic rv">
+          <div class="it">Что входит в полный курс</div>
+          <ul class="cl">
+            <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>5 видеолекций с презентациями</li>
+            <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong style="color:var(--g4)">2 часа личных консультаций с руководителем</strong></li>
+            <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>6 месяцев технической поддержки</li>
+            <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Бонусное ПО + промокоды на оборудование</li>
+            <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Пакет документов (договоры, прайс, наряды)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Боли новичка</div><h2>Что останавливает — и как это решается</h2></div>
+    <div class="pg">
+      <div class="pc rv"><div class="pi"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="pt">Страх сломать ЭБУ клиента</div><div class="pd">Лекция по методам разбирает точки отказа, правила резервирования и безопасной записи — понимаете, что делаете на каждом шаге.</div></div></div>
+      <div class="pc rv"><div class="pi"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="pt">Непонятный интерфейс ПО</div><div class="pd">Смотрели YouTube — не понятно с чего начать. В курсе пошаговая практика: что смотреть, как читать карты.</div></div></div>
+      <div class="pc rv"><div class="pi"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="pt">Не знаю, какое оборудование брать</div><div class="pd">Рынок перегружен. Консультация подберёт оборудование под вашу аудиторию без лишних расходов.</div></div></div>
+      <div class="pc rv"><div class="pi"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="pt">Нет наставника рядом</div><div class="pd">Большинство курсов: посмотрел — дальше сам. Здесь: 2 часа личных консультаций + 6 месяцев поддержки руководителя клуба.</div></div></div>
+      <div class="pc rv"><div class="pi"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="pt">Нет документов для работы с клиентами</div><div class="pd">Договор, наряд-заказ, прайс — готовый пакет документов входит в стоимость курса.</div></div></div>
+      <div class="pc rv"><div class="pi"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="pt">Страх начать и ошибиться</div><div class="pd">Помогаем выстроить логику работы с первым клиентом, сформировать прайс — уверенный старт, не хаос.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Кому подойдёт</div><h2>Для кого этот курс</h2></div>
+    <div class="wg">
+      <div class="wc rv"><div class="wi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="wt">Автоэлектрик</div><div class="wd">Та же клиентская база — новая услуга с высоким чеком. Логичное расширение специализации.</div></div></div>
+      <div class="wc rv"><div class="wi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="wt">Диагност</div><div class="wd">Умеете читать коды. Чип-тюнинг — следующий уровень: не просто диагностируете, но и изменяете параметры.</div></div></div>
+      <div class="wc rv"><div class="wi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="wt">Новичок в профессии</div><div class="wd">Курс начинается с основ и ведёт до реальных ЭБУ — без предварительного опыта.</div></div></div>
+      <div class="wc rv"><div class="wi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2zM9 22V12h6v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="wt">Владелец сервиса</div><div class="wd">Добавьте услугу с высокой маржой. Курс даёт понимание процесса и помогает выстроить направление.</div></div></div>
+      <div class="wc rv"><div class="wi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="wt">Механик с опытом ДВС</div><div class="wd">Знаете двигатель — осталось добавить работу с электроникой. Ваши знания становятся фундаментом.</div></div></div>
+      <div class="wc rv"><div class="wi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="wt">Уже практикует</div><div class="wd">Хотите систематизировать знания и убрать пробелы. Курс закрывает слепые зоны.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="prog" id="program">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Программа</div><h2>5 практических лекций</h2><p>Лекции выстроены последовательно. Можно купить весь курс или начать с одной нужной темы.</p></div>
+    <div class="pnote rv"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><strong>Можно купить отдельные лекции — 6 399 ₽ каждая</strong><span>Начните с одной темы. Доступ к лекции — бессрочный.</span></div></div>
+    <div class="ll">
+      <div class="lc rv" onclick="openLec(this)">
+        <div class="lh"><div class="ln">01</div><div><div class="lname">Методы программирования</div><div class="lsub">Как читать и записывать прошивки · Методы и их отличия</div></div><div class="lr"><div class="lcb">Кешбэк 640 ₽</div><div class="lprice">6 399 ₽</div><a href="https://etc-chip.ru/video-kurs-lekcij.html" class="lbtn" target="_blank" rel="noopener" onclick="event.stopPropagation()">Купить →</a></div></div>
+        <div class="lb"><div class="lbi">Разбор всех основных методов программирования ЭБУ двигателя и трансмиссии. Чем отличаются методы, в каких случаях применяется каждый. Особенности работы с разными ЭБУ, частые ошибки и нюансы безопасности.<br><br><strong>После лекции:</strong> чёткое понимание процесса чтения и записи прошивок.</div></div>
+      </div>
+      <div class="lc rv" onclick="openLec(this)">
+        <div class="lh"><div class="ln">02</div><div><div class="lname">Возможности программирования</div><div class="lsub">Обзор направлений · EGR, DPF, SCR, EVAP · Работа с клиентом</div></div><div class="lr"><div class="lcb">Кешбэк 640 ₽</div><div class="lprice">6 399 ₽</div><a href="https://etc-chip.ru/video-kurs-lekcij.html" class="lbtn" target="_blank" rel="noopener" onclick="event.stopPropagation()">Купить →</a></div></div>
+        <div class="lb"><div class="lbi">Все направления: увеличение мощности, отключение экологии, индивидуальные решения. Полный перечень систем: EGR, DPF, SCR (AdBlue), EVAP. Как формировать ТЗ и общаться с клиентом без недопонимания.<br><br><strong>После лекции:</strong> понимание, какие возможности реально доступны и как объяснять это клиенту.</div></div>
+      </div>
+      <div class="lc rv" onclick="openLec(this)">
+        <div class="lh"><div class="ln">03</div><div><div class="lname">Прошивка и её функции</div><div class="lsub">Структура файлов · Форматы · Фулл-флеш vs калибровка</div></div><div class="lr"><div class="lcb">Кешбэк 640 ₽</div><div class="lprice">6 399 ₽</div><a href="https://etc-chip.ru/video-kurs-lekcij.html" class="lbtn" target="_blank" rel="noopener" onclick="event.stopPropagation()">Купить →</a></div></div>
+        <div class="lb"><div class="lbi">Что такое прошивка на практике. Структура файлов, форматы, отличия фулл-флешей и калибровок. Чтение, проверка, анализ, корректная передача в работу.<br><br><strong>После лекции:</strong> умение ориентироваться в прошивках и понимать, с чем вы работаете.</div></div>
+      </div>
+      <div class="lc rv" onclick="openLec(this)">
+        <div class="lh"><div class="ln">04</div><div><div class="lname">Оборудование для чип-тюнинга</div><div class="lsub">Что нужно на старте · Выбор под марки · Промокоды</div></div><div class="lr"><div class="lcb">Кешбэк 640 ₽</div><div class="lprice">6 399 ₽</div><a href="https://etc-chip.ru/video-kurs-lekcij.html" class="lbtn" target="_blank" rel="noopener" onclick="event.stopPropagation()">Купить →</a></div></div>
+        <div class="lb"><div class="lbi">Разбор оборудования для старта. Что действительно нужно, а что можно не покупать сразу. Рекомендации под разные марки и форматы. Ссылки на проверенное оборудование и промокоды на скидки.<br><br><strong>После лекции:</strong> понимание, какое оборудование подходит именно под вашу аудиторию.</div></div>
+      </div>
+      <div class="lc rv" onclick="openLec(this)">
+        <div class="lh"><div class="ln">05</div><div><div class="lname">Отключение экологии</div><div class="lsub">EGR, DPF, SCR (AdBlue), Евро2 · Практика · Типовые ошибки</div></div><div class="lr"><div class="lcb">Кешбэк 640 ₽</div><div class="lprice">6 399 ₽</div><a href="https://etc-chip.ru/video-kurs-lekcij.html" class="lbtn" target="_blank" rel="noopener" onclick="event.stopPropagation()">Купить →</a></div></div>
+        <div class="lb"><div class="lbi">Практика отключения: Евро2, EGR, DPF, SCR (AdBlue). Что проверить до и после. Типовые ошибки, подводные камни, особенности разных марок.<br><br><strong>Одна из самых востребованных тем:</strong> системы экологии составляют значительную долю реальных заказов.</div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px" class="rv"><p style="color:var(--tx3);font-size:14px;margin-bottom:14px">Полный курс выгоднее покупки лекций по отдельности.</p><a href="#buy" class="btn btn-p btn-lg">Купить полный курс — 25 000 ₽</a></div>
+  </div>
+</section>
+
+<section id="format">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Формат</div><h2>Как проходит обучение</h2></div>
+    <div class="fmg">
+      <div class="fmc rv"><div class="fmi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Видеолекции + презентации</h3><p>Смотрите в любое время. Возвращайтесь к нужным моментам. Доступ бессрочный.</p></div></div>
+      <div class="fmc rv"><div class="fmi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div><h3>В своём темпе — без дедлайнов</h3><p>Никакого расписания. Проходите параллельно с работой. Курс или отдельные лекции.</p></div></div>
+      <div class="fmc rv"><div class="fmi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Курс целиком или по лекциям</h3><p>Гибкий вход на любом уровне. Купите весь курс выгоднее или начните с одной темы.</p></div></div>
+      <div class="fmc rv"><div class="fmi"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>2 часа консультаций + 6 мес. поддержки</h3><p>Встроены в стоимость. Личная работа с руководителем после обучения.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sup" id="support">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Поддержка</div><h2>После обучения вы не остаётесь один</h2><p>Цель курса — не продать видео, а помочь реально войти в профессию и начать зарабатывать.</p></div>
+    <div class="supg">
+      <div>
+        <div class="ch rv">
+          <div class="cbadge"><svg width="12" height="12" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Включено в курс</div>
+          <div class="ctitle">2 часа личных<br>консультаций с<br><span>руководителем клуба</span></div>
+          <p class="cdesc">После прохождения курса — два часа живого общения один на один. Не бот, не FAQ, не форум. Лично, под ваш запрос.<br><br>Разберёте конкретные машины, нестандартные кейсы, выбор оборудования или стратегию старта.</p>
+          <div class="cpts">
+            <div class="cpt"><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Разбор ваших конкретных вопросов и кейсов</div>
+            <div class="cpt"><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Подбор оборудования под вашу аудиторию</div>
+            <div class="cpt"><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Стратегия первых шагов и ценообразование</div>
+            <div class="cpt"><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Прямые ответы — без шаблонов и отписок</div>
+          </div>
+        </div>
+        <div class="si">
+          <div class="sitem rv"><div class="sico"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Личные ответы руководителя</h3><p>Все вопросы в процессе обучения — напрямую. Ответы от практика, не от менеджера.</p></div></div>
+          <div class="sitem rv"><div class="sico"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>6 месяцев технической поддержки</h3><p>Нестандартный ЭБУ, сложный кейс — спрашиваете и получаете ответ практика.</p></div></div>
+          <div class="sitem rv"><div class="sico"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Помощь с ценообразованием</h3><p>Как сформировать прайс. Типичная ошибка новичка — занижать цену из неуверенности.</p></div></div>
+          <div class="sitem rv"><div class="sico"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div><h3>Рекомендации по соцсетям</h3><p>Как заявить о себе как специалисте и выстроить поток клиентов онлайн.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="tlc rv">
+          <div class="tlt">После покупки — что происходит</div>
+          <div class="tl">
+            <div class="tls"><div class="tld">1</div><div><div class="tlt2">Получаете доступ к архиву</div><div class="tld2">Видеолекции, презентации, бонусное ПО — сразу после оплаты.</div></div></div>
+            <div class="tls"><div class="tld">2</div><div><div class="tlt2">Проходите курс, задаёте вопросы</div><div class="tld2">Руководитель клуба отвечает лично по ходу обучения.</div></div></div>
+            <div class="tls"><div class="tld" style="color:var(--g4)">3</div><div><div class="tlt2" style="color:var(--g4)">2 часа личных консультаций</div><div class="tld2">Разбираете конкретные ситуации, оборудование, стратегию старта.</div></div></div>
+            <div class="tls"><div class="tld">4</div><div><div class="tlt2">Получаете пакет документов</div><div class="tld2">Договоры, наряд-заказы, прайс — готово к первому клиенту.</div></div></div>
+            <div class="tls"><div class="tld">5</div><div><div class="tlt2">6 месяцев поддержки</div><div class="tld2">Работаете с реальными заказами — задаёте вопросы практику.</div></div></div>
+            <div class="tls"><div class="tld" style="background:var(--g5);border-color:var(--g5);color:#fff"><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="tlt2">Уверенный самостоятельный специалист</div><div class="tld2">Стабильный поток клиентов и понимание, как расти дальше.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="included">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Что входит</div><h2>Всё необходимое для реального старта</h2></div>
+    <div class="incg">
+      <div class="incb rv"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Видеолекции и презентации</h3><ul class="incul"><li>5 практических видеолекций</li><li>Слайды и материалы к каждой</li><li>Доступ бессрочный</li></ul></div>
+      <div class="incb rv"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>ПО + промокоды</h3><ul class="incul"><li>Бонусное ПО для прошивок</li><li>Промокоды у поставщиков</li><li>Ссылки на проверенное железо</li></ul></div>
+      <div class="incb rv" style="border-color:var(--g5)"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3 style="color:var(--g4)">2 часа личных консультаций</h3><ul class="incul"><li>Живое общение с руководителем</li><li>Разбор ваших конкретных задач</li><li>Помощь со стратегией старта</li></ul></div>
+      <div class="incb rv"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Пакет документов</h3><ul class="incul"><li>Договоры с клиентами</li><li>Наряд-заказы</li><li>Шаблоны прайс-листов</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="bonussec" id="bonus">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Бонус</div><h2>Ресурс для старта — сразу после оплаты</h2></div>
+    <div class="bong">
+      <div class="bonc rv" data-s="₽"><div class="bonn">2 500 ₽</div><div class="bonl">кешбэк — полный курс</div><p class="bond">10% от стоимости курса начисляется в личный кабинет. Оплачивайте бонусами до 100% любого товара в магазине.</p><div class="bonps"><span class="bonp">✓ Начисляется автоматически</span><span class="bonp">✓ До 100% оплаты товара</span><span class="bonp">✓ Весь ассортимент</span></div></div>
+      <div class="bonc rv" data-s="%"><div class="bonn">640 ₽</div><div class="bonl">кешбэк — за каждую лекцию</div><p class="bond">Покупаете лекции по одной — 640 ₽ возвращается за каждую. Накапливайте на оборудование.</p><div class="bonps"><span class="bonp">✓ За каждую из 5 лекций</span><span class="bonp">✓ Суммируется на счету</span><span class="bonp">✓ Весь ассортимент</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Почему здесь</div><h2>Что отличает этот курс</h2></div>
+    <div class="whyg">
+      <div class="whyc rv"><div class="whych"><svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Практик, не теоретик</h3><p>Преподаёт руководитель клуба, который работает с ЭБУ каждый день. Реальные кейсы.</p></div></div>
+      <div class="whyc rv"><div class="whych"><svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>2 часа консультаций включены</h3><p>Личная работа с руководителем клуба входит в базовую стоимость — не продаётся отдельно.</p></div></div>
+      <div class="whyc rv"><div class="whych"><svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>6 месяцев поддержки</h3><p>Сопровождение после обучения — не формальность. Руководитель отвечает лично.</p></div></div>
+      <div class="whyc rv"><div class="whych"><svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Гибкий формат покупки</h3><p>Весь курс или одна лекция. Не платите за то, что уже знаете.</p></div></div>
+      <div class="whyc rv"><div class="whych"><svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Документы и ПО в комплекте</h3><p>Договоры, наряды, прайс, бонусный софт и промокоды — всё включено сразу.</p></div></div>
+      <div class="whyc rv"><div class="whych"><svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Рейтинг 5.0</h3><p>Курс оценён учениками на максимум. Реальные оценки покупателей.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="revsec" id="reviews">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Отзывы</div><h2>Что говорят ученики</h2></div>
+    <div class="revg">
+      <div class="revc rv"><div class="revst">★★★★★</div><p class="revtx">Работаю автоэлектриком 7 лет. Курс дал чёткую структуру. 2 часа консультаций использовал на разбор трёх конкретных машин — это оказалось ценнее самих лекций. За два месяца вернул стоимость курса несколько раз.</p><div class="reva"><div class="revav" style="background:rgba(34,197,94,.15);color:var(--g4)">АЕ</div><div><div class="revn">Алексей Е.</div><div class="revr">Автоэлектрик, Краснодар</div></div></div></div>
+      <div class="revc rv"><div class="revst">★★★★★</div><p class="revtx">Пришёл диагностом. Промокоды реально работают, сэкономил на программаторе. Консультации использовал под оборудование — не переплатил. 6 месяцев поддержки закрыли все нестандартные ситуации.</p><div class="reva"><div class="revav" style="background:rgba(59,130,246,.15);color:#60a5fa">ДМ</div><div><div class="revn">Дмитрий М.</div><div class="revr">Диагност, Новосибирск</div></div></div></div>
+      <div class="revc rv"><div class="revst">★★★★★</div><p class="revtx">Полный ноль без опыта. Через 2 часа консультаций с руководителем понял, с чего начинать и какое оборудование брать. Первый заказ взял через 6 недель после старта обучения.</p><div class="reva"><div class="revav" style="background:rgba(249,115,22,.15);color:#fb923c">СК</div><div><div class="revn">Сергей К.</div><div class="revr">Новичок, Воронеж</div></div></div></div>
+      <div class="revc rv"><div class="revst">★★★★★</div><p class="revtx">Небольшой сервис. 2 часа консультаций помогли выстроить логику работы с клиентами и сформировать прайс. Окупилось за полтора месяца. Пакет документов сэкономил время.</p><div class="reva"><div class="revav" style="background:rgba(168,85,247,.15);color:#c084fc">ИВ</div><div><div class="revn">Игорь В.</div><div class="revr">Владелец сервиса, Казань</div></div></div></div>
+      <div class="revc rv"><div class="revst">★★★★★</div><p class="revtx">Начал с лекции по отключению экологии. Материал чёткий, разобраны ошибки, о которых нигде не пишут. 6 месяцев поддержки реально работают — спрашивал про конкретные марки.</p><div class="reva"><div class="revav" style="background:rgba(20,184,166,.15);color:#2dd4bf">МП</div><div><div class="revn">Михаил П.</div><div class="revr">Автомеханик, Екатеринбург</div></div></div></div>
+      <div class="revc rv"><div class="revst">★★★★★</div><p class="revtx">8 лет диагностом. Прошёл за 3 недели в свободное время. Объясняют «почему», а не «делай так». Пакет документов сэкономил неделю работы. Рекомендую всем коллегам.</p><div class="reva"><div class="revav" style="background:rgba(14,165,233,.15);color:#38bdf8">ОФ</div><div><div class="revn">Олег Ф.</div><div class="revr">Диагност, Санкт-Петербург</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faqsec" id="faq">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">FAQ</div><h2>Частые вопросы</h2></div>
+    <div class="fql">
+      <div class="fqi rv"><button class="fqq" onclick="tFaq(this)">Можно ли пройти курс без опыта?<span class="fqa2">+</span></button><div class="fqa"><p>Да. Курс не требует предварительной подготовки. Единственное условие — техническое мышление и готовность вникать в детали. Справятся все, кто умеет читать инструкцию и не пасует перед нюансами.</p></div></div>
+      <div class="fqi rv"><button class="fqq" onclick="tFaq(this)">Как использовать 2 часа личных консультаций?<span class="fqa2">+</span></button><div class="fqa"><p>После прохождения курса вы договариваетесь с руководителем клуба об удобном времени. Это живое общение один на один. Можно разобрать конкретные машины, стратегию старта, выбор оборудования, ценообразование или любой другой вопрос. Часы можно использовать за одну сессию или разделить на две.</p></div></div>
+      <div class="fqi rv"><button class="fqq" onclick="tFaq(this)">Какое оборудование нужно до начала обучения?<span class="fqa2">+</span></button><div class="fqa"><p>До начала — ничего. Лекция №4 полностью посвящена оборудованию. В рамках 2 часов консультаций можно разобрать подбор под вашу конкретную аудиторию. В комплект входят промокоды на скидки у проверенных поставщиков.</p></div></div>
+      <div class="fqi rv"><button class="fqq" onclick="tFaq(this)">Сколько реально можно зарабатывать?<span class="fqa2">+</span></button><div class="fqa"><p>Один чип-тюнинг в регионах — 3 000–8 000 ₽. В крупных городах — от 8 000 до 15 000 ₽. 3–5 машин в неделю дают 50 000–100 000 ₽/месяц. На старте — 2–4 машины в месяц параллельно с основной работой. Через 3–6 месяцев большинство учеников выходит на стабильный поток.</p></div></div>
+      <div class="fqi rv"><button class="fqq" onclick="tFaq(this)">Можно ли покупать отдельные лекции?<span class="fqa2">+</span></button><div class="fqa"><p>Да, каждая лекция — 6 399 ₽ отдельно. Кешбэк 640 ₽ за каждую покупку. Доступ бессрочный. Полный курс за 25 000 ₽ выгоднее и включает 2 часа консультаций, 6 месяцев поддержки и пакет документов.</p></div></div>
+      <div class="fqi rv"><button class="fqq" onclick="tFaq(this)">Что входит в 6 месяцев поддержки?<span class="fqa2">+</span></button><div class="fqa"><p>Руководитель клуба лично отвечает на вопросы по прошивкам, нестандартным ЭБУ, ситуациям с клиентами. Помощь с ценообразованием и рекомендации по соцсетям. Ответы практика на реальные рабочие ситуации.</p></div></div>
+      <div class="fqi rv"><button class="fqq" onclick="tFaq(this)">Как быстро можно взять первого клиента?<span class="fqa2">+</span></button><div class="fqa"><p>Большинство учеников берут первый заказ через 4–8 недель после начала обучения. Готовый пакет документов снимает административный барьер. 2 часа консультаций помогают выстроить стратегию поиска первых клиентов.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaf" id="buy">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Купить курс</div><h2>Выберите формат обучения</h2><p>Полный курс — всё включено. Или начните с одной нужной лекции.</p></div>
+    <div class="ctag">
+      <div class="ctac rv">
+        <h3>Одна лекция</h3>
+        <p class="ctad">Любая из 5 лекций. Доступ бессрочный. Для тех, кто хочет изучить конкретную тему или попробовать формат.</p>
+        <div class="ctap">6 399 ₽</div>
+        <div class="ctacb">Кешбэк <span>640 ₽</span> на личный счёт</div>
+        <div class="ctano">Доступ бессрочный</div>
+        <ul class="ctafl">
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Любая из 5 лекций на выбор</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Видео + презентация</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>640 ₽ кешбэк на счёт</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Можно докупить остальные позже</li>
+        </ul>
+        <a href="https://etc-chip.ru/video-kurs-lekcij.html" class="btn btn-g btn-w" target="_blank" rel="noopener">Выбрать лекцию</a>
+      </div>
+      <div class="ctac feat rv">
+        <div class="ctapop">Рекомендуем</div>
+        <h3>Полный видеокурс</h3>
+        <p class="ctad">5 лекций + 2 часа консультаций + 6 месяцев поддержки + ПО + промокоды + документы + ценообразование + соцсети.</p>
+        <div class="ctap">25 000 ₽</div>
+        <div class="ctacb">Кешбэк <span>2 500 ₽</span> на личный счёт</div>
+        <div class="ctano">Рейтинг 5.0 · Всё включено</div>
+        <ul class="ctafl">
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Все 5 видеолекций + презентации</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hi">2 часа личных консультаций с руководителем</span></li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>6 месяцев технической поддержки</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Бонусное ПО + промокоды на оборудование</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Пакет документов (договоры, наряды, прайс)</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Помощь с ценообразованием и соцсетями</li>
+          <li><svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>2 500 ₽ кешбэк на личный счёт</li>
+        </ul>
+        <a href="https://etc-chip.ru/video-kurs-lekcij.html" class="btn btn-p btn-w btn-lg" target="_blank" rel="noopener">Купить полный курс</a>
+      </div>
+    </div>
+    <div class="urg rv"><p>Пока вы думаете — конкуренты в вашем регионе уже осваивают прошивки.<br><strong>2 часа с руководителем клуба дадут вам старт без лишних ошибок.</strong></p></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="footi">
+      <div class="logo"><div class="logo-b" style="width:30px;height:30px;font-size:11px">ETC</div><div class="logo-i"><span class="logo-n" style="font-size:14px">Expert Tun Club</span><span class="logo-s">etc-chip.ru</span></div></div>
+      <div class="footl"><a href="#program">Программа</a><a href="#support">Поддержка</a><a href="#faq">FAQ</a><a href="https://etc-chip.ru" target="_blank" rel="noopener">На сайт →</a></div>
+      <div class="footx">© 2025 Expert Tun Club</div>
+    </div>
+  </div>
+</footer>
+
+<div class="stk" id="stk"><a href="#buy" class="btn btn-p">Купить курс — 25 000 ₽</a></div>
+
+<script>
+function tFaq(btn){const i=btn.closest('.fqi'),o=i.classList.contains('open');document.querySelectorAll('.fqi.open').forEach(e=>e.classList.remove('open'));if(!o)i.classList.add('open')}
+function openLec(c){const o=c.classList.contains('open');document.querySelectorAll('.lc.open').forEach(e=>e.classList.remove('open'));if(!o)c.classList.add('open')}
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target)}})},{threshold:.07,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.style.borderBottomColor=window.scrollY>50?'rgba(34,197,94,.2)':'var(--border)'},{ passive:true});
+const buy=document.getElementById('buy'),stk=document.getElementById('stk');
+if(buy&&stk){new IntersectionObserver(e=>{stk.style.opacity=e[0].isIntersecting?'0':'1';stk.style.pointerEvents=e[0].isIntersecting?'none':'auto'},{threshold:.05}).observe(buy)}
+</script>
+</body>
+</html>

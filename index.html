@@ -100,6 +100,20 @@ section{padding:80px 0}
 .cl li{display:flex;gap:8px;font-size:13px;color:var(--tx);align-items:flex-start}
 .cl li svg{flex-shrink:0;margin-top:2px;color:var(--g5)}
 
+/* GALLERY */
+.gallery-sec{background:var(--bg1)}
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:720px){.gal-grid{grid-template-columns:1fr 1fr 1fr;grid-template-rows:220px 220px}}
+.gal-item{border-radius:var(--r12);overflow:hidden;position:relative;background:var(--bg3)}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;min-height:160px}
+.gal-item:hover img{transform:scale(1.04)}
+.gal-cap{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(0deg,rgba(2,6,23,.85) 0%,transparent 100%);font-size:12px;font-weight:600;color:var(--tx2);letter-spacing:.03em}
+@media(min-width:720px){
+  .gal-tall{grid-row:span 2}
+  .gal-wide{grid-column:span 2}
+}
+.gal-note{text-align:center;color:var(--tx3);font-size:14px;margin-top:20px;line-height:1.65}
+
 /* PAIN */
 .pain{background:var(--bg1)}
 .pg{display:grid;gap:12px}
@@ -337,6 +351,39 @@ section{padding:80px 0}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="gallery-sec" id="gallery">
+  <div class="wrap">
+    <div class="sh rv"><div class="tag">Профессия изнутри</div><h2>Куда ты приходишь</h2><p>Реальная атмосфера чип-тюнинга — оборудование, сервис, автомобили клиентов. Именно это ждёт тебя после обучения.</p></div>
+    <div class="gal-grid">
+      <div class="gal-item gal-tall rv">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=700&q=80" alt="Механик работает с двигателем" loading="lazy">
+        <div class="gal-cap">Работа с двигателем</div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80" alt="Электронный блок управления — плата ЭБУ" loading="lazy">
+        <div class="gal-cap">Электроника ЭБУ</div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Двигатель автомобиля — ремни и шкивы" loading="lazy">
+        <div class="gal-cap">Внутренности мотора</div>
+      </div>
+      <div class="gal-item gal-wide rv">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1100&q=80" alt="Диагностика автомобиля с ноутбуком в сервисе" loading="lazy">
+        <div class="gal-cap">Диагностика и прошивка</div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=700&q=80" alt="Автосервис — инструменты и оборудование" loading="lazy">
+        <div class="gal-cap">Рабочий сервис</div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80" alt="Автомобиль клиента в боксе сервиса" loading="lazy">
+        <div class="gal-cap">Клиентские автомобили</div>
+      </div>
+    </div>
+    <p class="gal-note rv">Специалист по чип-тюнингу работает с реальными ЭБУ, оборудованием и автомобилями — от бюджетных до премиум-класса.</p>
   </div>
 </section>
 
